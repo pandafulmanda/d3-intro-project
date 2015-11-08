@@ -1,0 +1,34 @@
+<html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+	<svg width="960" height="500"></svg>
+
+<script>
+  var sampleData = [1, 2, 3, 4, 5];
+
+  var dataElements = d3.select("svg")
+    .selectAll("rect")
+    .data(sampleData)
+    .enter();
+
+  dataElements
+    .append("rect")
+    .attr("x", function(dataItem, index){
+      return 20 * index;
+    })
+    .attr("y", function(){
+      return 0;
+    })
+    .attr("height", function(dataItem, index){
+      return dataItem * 100;
+    })
+    .attr("width", function(dataItem, index){
+      return 20;
+    })
+
+</script>
+</body>
+</html>
