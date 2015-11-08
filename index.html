@@ -16,7 +16,8 @@
 
     eachDataPoint.enter().append("rect");
 
-    eachDataPoint.attr("x", function(dataItem, index){
+    eachDataPoint
+      .attr("x", function(dataItem, index){
         return 20 * index;
       })
       .attr("y", function(){
