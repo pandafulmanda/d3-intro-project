@@ -14,7 +14,8 @@
       .selectAll("rect")
       .data(data);
 
-    eachDataPoint.enter().append("rect");
+    eachDataPoint.enter()
+      .append("rect");
 
     eachDataPoint
       .attr("x", function(dataItem, index){
@@ -30,7 +31,8 @@
         return dataItem * 100;
       });
 
-    eachDataPoint.exit().remove();
+    eachDataPoint.exit()
+      .remove();
   }
 
 </script>
