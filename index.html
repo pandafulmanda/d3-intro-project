@@ -9,12 +9,12 @@
 <script>
   var sampleData = [1, 2, 3, 4, 5];
 
-  var dataElements = d3.select("svg")
+  var eachDataPoint = d3.select("svg")
     .selectAll("rect")
     .data(sampleData)
     .enter();
 
-  dataElements
+  eachDataPoint
     .append("rect")
     .attr("x", function(dataItem, index){
       return 20 * index;
