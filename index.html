@@ -9,26 +9,28 @@
 <script>
   var sampleData = [1, 2, 3, 4, 5];
 
-  var eachDataPoint = d3.select("svg")
-    .selectAll("rect")
-    .data(sampleData);
+  function update(data){
+    var eachDataPoint = d3.select("svg")
+      .selectAll("rect")
+      .data(data);
 
-  eachDataPoint.enter().append("rect");
+    eachDataPoint.enter().append("rect");
 
-  eachDataPoint.attr("x", function(dataItem, index){
-      return 20 * index;
-    })
-    .attr("y", function(){
-      return 0;
-    })
-    .attr("height", function(dataItem, index){
-      return dataItem * 100;
-    })
-    .attr("width", function(dataItem, index){
-      return 20;
-    });
+    eachDataPoint.attr("x", function(dataItem, index){
+        return 20 * index;
+      })
+      .attr("y", function(){
+        return 0;
+      })
+      .attr("width", function(dataItem, index){
+        return 20;
+      })
+      .attr("height", function(dataItem, index){
+        return dataItem * 100;
+      });
 
-  eachDataPoint.exit().remove();
+    eachDataPoint.exit().remove();
+  }
 
 </script>
 </body>
