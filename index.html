@@ -11,12 +11,11 @@
 
   var eachDataPoint = d3.select("svg")
     .selectAll("rect")
-    .data(sampleData)
-    .enter();
+    .data(sampleData);
 
-  eachDataPoint
-    .append("rect")
-    .attr("x", function(dataItem, index){
+  eachDataPoint.enter().append("rect");
+
+  eachDataPoint.attr("x", function(dataItem, index){
       return 20 * index;
     })
     .attr("y", function(){
@@ -28,6 +27,8 @@
     .attr("width", function(dataItem, index){
       return 20;
     });
+
+  eachDataPoint.exit().remove();
 
 </script>
 </body>
